@@ -1,0 +1,287 @@
+@import url("https://fonts.googleapis.com/css2?family=Merriweather:ital@1&display=swap");
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    height: 100vh;
+    font-size: 1.8rem;
+    line-height: 1.5;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgba(255, 255, 255);
+}
+
+h1 {
+    font-size: 8rem;
+    color: #fff;
+    margin-bottom: 3rem;
+    text-align: center;
+}
+
+h2 {
+    text-align: center;
+    font-size: 5rem;
+    margin-bottom: 3rem;
+    color: rgb(239 94 47);
+}
+
+.container {
+    max-width: 1500px;
+    margin: 0 auto;
+}
+/*****************
+Hero
+******************/
+.header {
+    position: relative;
+    width: 100%;
+    background: url(images/faq.png) no-repeat;
+    background-size: cover;
+    background-position: center center;
+    height: min-content;
+    padding: 10rem 0;
+}
+
+.header::after {
+    content: "";
+    position: absolute;
+    bottom: -0.2%;
+    left: 0;
+    display: inline-block;
+    width: 100%;
+    height: 50rem;
+    background: rgba(255, 255, 255);
+    -webkit-clip-path: polygon(100% 90%, 0% 100%, 100% 100%);
+    clip-path: polygon(100% 90%, 0% 100%, 100% 100%);
+}
+
+.hero {
+    margin: 0 auto 10rem;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+/*****************
+Search input
+*****************/
+.search-container {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 80vw;
+    width: 50%;
+    border-radius: 20px;
+    box-shadow: 1px 1px 10px rgb(157 157 157 / 50%);
+    height: 6rem;
+    overflow: hidden;
+    background: rgba(255, 255, 255);
+}
+.search-input {
+    padding: 2rem 1rem;
+    flex-grow: 1;
+    border: 0;
+    outline: 0;
+    font-size: 2rem;
+}
+::placeholder {
+    font-size: 2rem;
+    font-style: italic;
+}
+
+/******************
+Buttons
+******************/
+.btn {
+    padding: 1.5rem;
+    border: 0;
+    cursor: pointer;
+    width: 2rem;
+    height: 2rem;
+}
+
+.btn:focus,
+.btn:active {
+    outline: 1px solid #f1b17f45;
+}
+
+.btn-title {
+    width: 100%;
+    height: 100%;
+    font-size: 2.5rem;
+    font-weight: bold;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    background: transparent;
+    text-align: left;
+    padding: 2rem;
+}
+
+.chevron-btn {
+    background: url(images/chevron-down.svg) no-repeat;
+    background-size: contain;
+    padding-right: 3rem;
+}
+
+.close-btn {
+    background: url(images/close.svg) no-repeat;
+    background-size: contain;
+    display: none;
+    margin-top: 1.5rem;
+}
+
+.search-btn {
+    background: url(images/search.svg) no-repeat;
+    background-size: contain;
+    background-position: center center;
+    background-color: #fff;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    width: 4rem;
+    height: 100%;
+}
+
+/****************
+FAQ 
+*****************/
+
+.faq {
+    max-width: 70%;
+    margin: 5rem auto 0;
+}
+
+.faq__item {
+    position: relative;
+    border-radius: 20px;
+    margin: 2rem 0;
+}
+
+.faq__item__title {
+    display: flex;
+    justify-content: space-between;
+    font-size: 2.5rem;
+    color: #211716;
+    background-color: #ecd88845;
+    border-radius: 20px;
+
+    transition: background-color 0.3s ease-in-out;
+}
+
+.faq__item__title:hover {
+    background-color: rgb(237 212 211);
+}
+
+.faq__item__text-wrapper {
+    height: 0;
+    padding: 0;
+    overflow: hidden;
+
+    transition: height 0.3s ease-in-out;
+}
+
+.faq__item__text {
+    font-size: 2.2rem;
+    padding: 2rem;
+}
+
+.faq__item__text > span {
+    font-style: italic;
+}
+
+/* Active class */
+.faq__item.active {
+    background-color: #fff;
+    border: 1px solid #ecd88845;
+    box-shadow: 0 0 3px rgba(204, 199, 199, 0.1),
+        1px 1px 1px rgba(171, 236, 243, 0.1);
+}
+
+.faq__item.active .faq__item__title {
+    background-color: rgb(208, 198, 198);
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+.faq__item.active .faq__item__text {
+    display: block;
+    background-color: rgb(208, 198, 198);
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+
+.faq__item.active .chevron-btn {
+    display: none;
+}
+
+.faq__item.active .close-btn {
+    display: block;
+}
+
+/*****************
+Background clip
+******************/
+
+.bg-clip {
+    width: 100%;
+    padding: 10rem 0;
+    background-image: linear-gradient(
+        to right,
+        rgb(255 197 159),
+        rgb(255 185 161),
+        rgb(255 179 162)
+    );
+    -webkit-clip-path: polygon(0 50%, 100% 94%, 100% 100%, 0 100%);
+    clip-path: polygon(0 50%, 100% 94%, 100% 100%, 0 100%);
+}
+
+/*****************
+Responsive
+******************/
+
+@media screen and (max-width: 1200px) {
+    h1 {
+        font-size: 6rem;
+    }
+
+    h2 {
+        font-size: 4rem;
+    }
+
+    .search-container {
+        width: 70%;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    html {
+        font-size: 55%;
+    }
+
+    .header {
+        padding: 7rem 0;
+    }
+
+    .header::after {
+        bottom: -0.3%;
+    }
+
+    .search-container {
+        width: 100%;
+    }
+
+    .faq {
+        max-width: 85%;
+    }
+}
