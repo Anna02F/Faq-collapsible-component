@@ -127,6 +127,7 @@ Buttons
     background: transparent;
     text-align: left;
     padding: 2rem;
+    color: #333;
 }
 
 .chevron-btn {
@@ -209,14 +210,14 @@ FAQ
 }
 
 .faq__item.active .faq__item__title {
-    background-color: rgb(208, 198, 198);
+    background-color: rgb(227 218 218);
     border-bottom-left-radius: 0;
     border-bottom-right-radius: 0;
 }
 
 .faq__item.active .faq__item__text {
     display: block;
-    background-color: rgb(208, 198, 198);
+    background-color: rgb(227 218 218);
     border-bottom-left-radius: 20px;
     border-bottom-right-radius: 20px;
 }
@@ -283,5 +284,39 @@ Responsive
 
     .faq {
         max-width: 85%;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    html {
+        font-size: 50%;
+    }
+
+    h1 {
+        font-size: 4.5rem;
+    }
+
+    h2 {
+        font-size: 3rem;
+    }
+
+    .search-input {
+        padding: 0 0 0 1rem;
+    }
+
+    .search-input::placeholder {
+        font-size: 1.5rem;
+    }
+
+    .faq {
+        margin-top: 2rem;
+    }
+
+    .btn-title {
+        font-size: 2rem;
+    }
+
+    .bg-clip {
+        padding: 7rem;
     }
 }
